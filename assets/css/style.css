@@ -529,6 +529,15 @@ main {
   border-radius: 14px;
   box-shadow: var(--shadow-2);
   z-index: 1;
+  cursor: pointer;
+  transition: transform var(--transition-1), box-shadow var(--transition-1);
+}
+
+.service-item:hover,
+.service-item:focus-visible,
+.service-item.active {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-3);
 }
 
 .service-item::before {
@@ -553,6 +562,44 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-3);
   line-height: 1.6;
+}
+
+.service-skills {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height var(--transition-1), opacity var(--transition-1), margin-top var(--transition-1);
+}
+
+.service-item:hover .service-skills,
+.service-item:focus-visible .service-skills,
+.service-item.active .service-skills {
+  max-height: 120px;
+  margin-top: 15px;
+  opacity: 1;
+}
+
+.service-skills-label {
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+}
+
+.service-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.service-skills-list li {
+  padding: 4px 8px;
+  border: 1px solid var(--jet);
+  border-radius: 6px;
+  color: var(--light-gray);
+  font-size: var(--fs-8);
 }
 
 
